@@ -1,0 +1,355 @@
+{
+  "resume_path": "Resume1.pdf",
+  "jd_path": "jd1.pdf",
+  "resume_data": {
+    "skills": [
+      "matplotlib",
+      "javascript",
+      "ml",
+      "pandas",
+      "python",
+      "seaborn",
+      "git",
+      "cnn",
+      "lstm",
+      "data analysis",
+      "communication",
+      "accuracy",
+      "data normalization",
+      "nlp",
+      "scikit-learn",
+      "creativity",
+      "ai",
+      "go",
+      "deep learning",
+      "roc",
+      "r",
+      "java",
+      "teamwork",
+      "machine learning"
+    ],
+    "experience": {
+      "years": 0,
+      "positions": [
+        "model",
+        "data scientist",
+        "machine learning engineer",
+        "deep learning engineer",
+        "ai engineer",
+        "data analyst",
+        "nlp engineer"
+      ]
+    },
+    "job_roles": [
+      "model",
+      "data scientist",
+      "machine learning engineer",
+      "deep learning engineer",
+      "ai engineer",
+      "data analyst",
+      "nlp engineer"
+    ],
+    "projects": [
+      {
+        "name": "ml-powered resume analysis system using spacy and scikit-learn",
+        "description": "Jaskirat Singh Bagga\nKolkata, India | 9330248051 | jaskirat.bgin@gmail.com | https://github.com/jazzyease\nEDUCATION\nLovely Professional University Jalandhar, Punjab\nBTech (CSE - Data Science (ML and AI)) Graduation Date: Aug 2024\nPROJECT EXPERIENCE\nLovley Professional University Jalandhar, Punjab\nResume Analyzer\nDeveloped an ML-powered resume analysis system using spaCy and scikit-learn, achieving 92% accuracy in skill extraction and 85%\naccuracy in job-resume matching across diverse industry domains, significantly outperforming traditional keyword-based methods.",
+        "skills": [
+          "ai",
+          "accuracy",
+          "ml",
+          "r",
+          "git",
+          "scikit-learn"
+        ],
+        "is_data_science": false
+      },
+      {
+        "name": "Engineered a robust...",
+        "description": "Engineered a robust NLP pipeline processing 10,000+ resumes, implementing advanced text extraction from PDF/DOCX formats,\nsemantic analysis for skill identification, and domain-specific matching algorithms that consider experience levels, education, and\nprofessional domains. Matches resumes with job descriptions with high accuracy and determined if candidates are fit for a job or in what areas are they lacking.",
+        "skills": [
+          "accuracy",
+          "data science",
+          "r",
+          "ai",
+          "nlp",
+          "go"
+        ],
+        "is_data_science": true
+      },
+      {
+        "name": "lstm-based predictive maintenance system using the metro pd dataset",
+        "description": "Lovely Professional University Jalandhar, Punjab\nMachinery anamoly detecction May 2024 - Jul 2024\nDeveloped an LSTM-based predictive maintenance system using the Metro PD dataset, successfully detecting anomalies in metro train\ncomponents with an accuracy of 85% and reducing false alarm rates by 40% compared to traditional threshold-based methods. Preprocessed and engineered features from 10,730 sensor measurements across multiple train subsystems, including traction, braking,\nand door mechanisms, implementing effective data normalization and temporal sliding window techniques. Validated the model's performance on historical failure cases from the Metro PD dataset, achieving an early warning time of 5-7 days\nbefore actual component failures.",
+        "skills": [
+          "lstm",
+          "ai",
+          "accuracy",
+          "data science",
+          "data normalization",
+          "roc",
+          "r"
+        ],
+        "is_data_science": true
+      },
+      {
+        "name": "machine learning model to recognise handwritten text using the mnist handwritten digits dataset",
+        "description": "Lovley Professional University Jalandhar, Punjab\nHandwritten Text Recognition by machine learning Jun 2023 - Aug 2023\nDeveloped a machine learning model to recognise handwritten text using the MNIST handwritten digits dataset.",
+        "skills": [
+          "data science",
+          "r",
+          "git",
+          "machine learning"
+        ],
+        "is_data_science": true
+      },
+      {
+        "name": "Used KNN(K Nearest...",
+        "description": "Used KNN(K Nearest Neighbour) and CNN(Convolutional Neural Network) for making the machine learning model. Finally compared the accuracies achieved by each model in recognising the handwritten text.",
+        "skills": [
+          "data science",
+          "r",
+          "machine learning",
+          "cnn"
+        ],
+        "is_data_science": true
+      },
+      {
+        "name": "Lovley Professional University...",
+        "description": "Lovley Professional University Jalandhar, Punjab\nExploratory Data Analysis on Zomato Bangalore data Nov 2022 - Dec 2022\nPerformed exploratory data analysis using Python on the restaurants in Bangalore dataset by Zomato. Found out what locations, cuisines, services should a budding restaurant offer to maximise its profits.",
+        "skills": [
+          "python",
+          "data science",
+          "r",
+          "data analysis"
+        ],
+        "is_data_science": true
+      },
+      {
+        "name": "Used pandas, matplotlib,...",
+        "description": "Used pandas, matplotlib, Seaborn libraries to clean, visualise and represent the data respectively.",
+        "skills": [
+          "matplotlib",
+          "seaborn",
+          "data science",
+          "r",
+          "pandas"
+        ],
+        "is_data_science": true
+      },
+      {
+        "name": "ADDITIONAL Technical :...",
+        "description": "ADDITIONAL\nTechnical\n: Python,Java, Data Structures, Algorithms, RDBMS, Git, Machine Learning, Deep Learning, JavaScript\nSkills\nCertifications &\n: Data Science ML and AI (Upgrad), Data Structures and Algorithms (GeeksForGeeks)\nTraining\nPower\n: Problem-solving, Creativity, Communication, Teamwork, Fast-learner\nSills",
+        "skills": [
+          "creativity",
+          "python",
+          "communication",
+          "teamwork",
+          "ai",
+          "javascript",
+          "go",
+          "data science",
+          "deep learning",
+          "ml",
+          "r",
+          "java",
+          "git",
+          "machine learning"
+        ],
+        "is_data_science": true
+      }
+    ]
+  },
+  "jd_data": {
+    "required_skills": [
+      "data visualization",
+      "big data",
+      "spark",
+      "data analysis",
+      "communication",
+      "regression",
+      "neural networks",
+      "power bi",
+      "clustering",
+      "hadoop",
+      "python",
+      "tableau",
+      "go",
+      "sql",
+      "r",
+      "excel",
+      "machine learning"
+    ],
+    "preferred_skills": [],
+    "required_experience": {
+      "years": 5,
+      "positions": []
+    },
+    "job_roles": [
+      "model",
+      "data scientist",
+      "senior data scientist",
+      "machine learning engineer",
+      "data analyst",
+      "statistician",
+      "data visualization specialist",
+      "bi analyst"
+    ]
+  },
+  "match_results": {
+    "overall_score": 47,
+    "component_scores": {
+      "skills": {
+        "score": 51,
+        "weight": 0.4,
+        "details": {
+          "matched": [
+            "python",
+            "data analysis",
+            "communication",
+            "go",
+            "r",
+            "machine learning"
+          ],
+          "missing": [
+            "clustering",
+            "hadoop",
+            "big data",
+            "regression",
+            "excel"
+          ],
+          "semantic_matches": {
+            "data visualization": [
+              "matplotlib",
+              0.85
+            ],
+            "tableau": [
+              "matplotlib",
+              0.85
+            ],
+            "spark": [
+              "javascript",
+              0.85
+            ],
+            "neural networks": [
+              "ml",
+              0.85
+            ],
+            "power bi": [
+              "javascript",
+              0.85
+            ],
+            "sql": [
+              "javascript",
+              0.85
+            ]
+          },
+          "preferred_matched": [],
+          "required_score": 0.6352941176470589,
+          "preferred_score": 0.0,
+          "is_data_science_role": true
+        }
+      },
+      "experience": {
+        "score": 30,
+        "weight": 0.3,
+        "details": {
+          "years": {
+            "resume": 0,
+            "required": 5,
+            "score": 0.0
+          },
+          "positions": {
+            "matched": [],
+            "missing": [],
+            "semantic_matches": {},
+            "score": 1.0
+          }
+        }
+      },
+      "job_roles": {
+        "score": 69,
+        "weight": 0.2,
+        "details": {
+          "matched": [
+            "data scientist",
+            "machine learning engineer",
+            "model",
+            "data analyst"
+          ],
+          "missing": [
+            "statistician",
+            "bi analyst"
+          ],
+          "semantic_matches": {
+            "data visualization specialist": [
+              "data scientist",
+              0.9121585155785411
+            ],
+            "senior data scientist": [
+              "data scientist",
+              0.9320542172242374
+            ]
+          }
+        }
+      },
+      "projects": {
+        "score": 38,
+        "weight": 0.1,
+        "details": {
+          "relevant_projects": [
+            {
+              "name": "Lovley Professional University...",
+              "relevance_score": 0.45776891042125023,
+              "text_similarity": 0.09628151736875032,
+              "skill_relevance": 1.0
+            },
+            {
+              "name": "machine learning model to recognise handwritten text using the mnist handwritten digits dataset",
+              "relevance_score": 0.3393242934036587,
+              "text_similarity": 0.0655404890060978,
+              "skill_relevance": 0.75
+            },
+            {
+              "name": "Used KNN(K Nearest...",
+              "relevance_score": 0.33515937052666744,
+              "text_similarity": 0.05859895087777903,
+              "skill_relevance": 0.75
+            },
+            {
+              "name": "ADDITIONAL Technical :...",
+              "relevance_score": 0.3020857815660605,
+              "text_similarity": 0.2177620168958151,
+              "skill_relevance": 0.42857142857142855
+            }
+          ],
+          "top_project_indices": [
+            4,
+            3,
+            5
+          ]
+        }
+      }
+    },
+    "feedback": {
+      "overall": "Moderate match. Consider addressing gaps before applying.",
+      "strengths": [
+        "Decent skills match, but some improvements possible.",
+        "Some relevant job roles, but could be better aligned.",
+        "'Lovley Professional University...' is particularly relevant to this position."
+      ],
+      "gaps": [
+        "Missing required skills: clustering, hadoop, big data, regression, excel",
+        "Experience gap of 5 years compared to the requirement.",
+        "Missing job roles: statistician, bi analyst",
+        "Projects don't strongly demonstrate relevant experience."
+      ],
+      "suggestions": [
+        "Emphasize your statistical knowledge: clustering, regression",
+        "Add big data technologies to your resume: hadoop, big data",
+        "As you're starting in data science, focus on building projects that demonstrate your skills and consider internships or entry-level positions.",
+        "Create a portfolio of data science projects (e.g., on GitHub) demonstrating your skills in machine learning, data analysis, and visualization.",
+        "Learn and showcase experience with popular ML frameworks like TensorFlow, PyTorch, or scikit-learn.",
+        "Participate in Kaggle competitions to gain practical experience and showcase your data science skills."
+      ]
+    }
+  }
+}

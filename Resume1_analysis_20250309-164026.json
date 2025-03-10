@@ -1,0 +1,275 @@
+{
+  "resume_path": "Resume1.pdf",
+  "jd_path": "jd3.txt",
+  "resume_data": {
+    "skills": [
+      "communication",
+      "data normalization",
+      "python",
+      "creativity",
+      "roc",
+      "lstm",
+      "ml",
+      "scikit-learn",
+      "git",
+      "data analysis",
+      "ai",
+      "matplotlib",
+      "r",
+      "cnn",
+      "machine learning",
+      "go",
+      "deep learning",
+      "java",
+      "accuracy",
+      "nlp",
+      "pandas",
+      "javascript",
+      "seaborn",
+      "teamwork"
+    ],
+    "experience": {
+      "years": 0,
+      "positions": [
+        "model",
+        "data scientist",
+        "machine learning engineer",
+        "deep learning engineer",
+        "ai engineer",
+        "data analyst",
+        "nlp engineer"
+      ]
+    },
+    "job_roles": [
+      "model",
+      "data scientist",
+      "machine learning engineer",
+      "deep learning engineer",
+      "ai engineer",
+      "data analyst",
+      "nlp engineer"
+    ],
+    "projects": [
+      {
+        "name": "ml-powered resume analysis system using spacy and scikit-learn",
+        "description": "Jaskirat Singh Bagga\nKolkata, India | 9330248051 | jaskirat.bgin@gmail.com | https://github.com/jazzyease\nEDUCATION\nLovely Professional University Jalandhar, Punjab\nBTech (CSE - Data Science (ML and AI)) Graduation Date: Aug 2024\nPROJECT EXPERIENCE\nLovley Professional University Jalandhar, Punjab\nResume Analyzer\nDeveloped an ML-powered resume analysis system using spaCy and scikit-learn, achieving 92% accuracy in skill extraction and 85%\naccuracy in job-resume matching across diverse industry domains, significantly outperforming traditional keyword-based methods.",
+        "skills": [
+          "ml",
+          "ai",
+          "accuracy",
+          "scikit-learn",
+          "r",
+          "git"
+        ],
+        "is_data_science": false
+      },
+      {
+        "name": "Engineered a robust...",
+        "description": "Engineered a robust NLP pipeline processing 10,000+ resumes, implementing advanced text extraction from PDF/DOCX formats,\nsemantic analysis for skill identification, and domain-specific matching algorithms that consider experience levels, education, and\nprofessional domains. Matches resumes with job descriptions with high accuracy and determined if candidates are fit for a job or in what areas are they lacking.",
+        "skills": [
+          "data science",
+          "ai",
+          "accuracy",
+          "nlp",
+          "go",
+          "r"
+        ],
+        "is_data_science": true
+      },
+      {
+        "name": "lstm-based predictive maintenance system using the metro pd dataset",
+        "description": "Lovely Professional University Jalandhar, Punjab\nMachinery anamoly detecction May 2024 - Jul 2024\nDeveloped an LSTM-based predictive maintenance system using the Metro PD dataset, successfully detecting anomalies in metro train\ncomponents with an accuracy of 85% and reducing false alarm rates by 40% compared to traditional threshold-based methods. Preprocessed and engineered features from 10,730 sensor measurements across multiple train subsystems, including traction, braking,\nand door mechanisms, implementing effective data normalization and temporal sliding window techniques. Validated the model's performance on historical failure cases from the Metro PD dataset, achieving an early warning time of 5-7 days\nbefore actual component failures.",
+        "skills": [
+          "ai",
+          "accuracy",
+          "data normalization",
+          "r",
+          "data science",
+          "roc",
+          "lstm"
+        ],
+        "is_data_science": true
+      },
+      {
+        "name": "machine learning model to recognise handwritten text using the mnist handwritten digits dataset",
+        "description": "Lovley Professional University Jalandhar, Punjab\nHandwritten Text Recognition by machine learning Jun 2023 - Aug 2023\nDeveloped a machine learning model to recognise handwritten text using the MNIST handwritten digits dataset.",
+        "skills": [
+          "machine learning",
+          "data science",
+          "r",
+          "git"
+        ],
+        "is_data_science": true
+      },
+      {
+        "name": "Used KNN(K Nearest...",
+        "description": "Used KNN(K Nearest Neighbour) and CNN(Convolutional Neural Network) for making the machine learning model. Finally compared the accuracies achieved by each model in recognising the handwritten text. Found out what locations, cuisines, services should a budding restaurant offer to maximise its profits.",
+        "skills": [
+          "cnn",
+          "data science",
+          "machine learning",
+          "r"
+        ],
+        "is_data_science": true
+      },
+      {
+        "name": "Used pandas, matplotlib,...",
+        "description": "Used pandas, matplotlib, Seaborn libraries to clean, visualise and represent the data respectively.",
+        "skills": [
+          "matplotlib",
+          "r",
+          "pandas",
+          "data science",
+          "seaborn"
+        ],
+        "is_data_science": true
+      },
+      {
+        "name": "ADDITIONAL Technical :...",
+        "description": "ADDITIONAL\nTechnical\n: Python,Java, Data Structures, Algorithms, RDBMS, Git, Machine Learning, Deep Learning, JavaScript\nSkills\nCertifications &\n: Data Science ML and AI (Upgrad), Data Structures and Algorithms (GeeksForGeeks)\nTraining\nPower\n: Problem-solving, Creativity, Communication, Teamwork, Fast-learner\nSills",
+        "skills": [
+          "deep learning",
+          "ml",
+          "communication",
+          "ai",
+          "java",
+          "python",
+          "r",
+          "git",
+          "machine learning",
+          "javascript",
+          "data science",
+          "creativity",
+          "go",
+          "teamwork"
+        ],
+        "is_data_science": true
+      }
+    ]
+  },
+  "jd_data": {
+    "required_skills": [
+      "java",
+      "go",
+      "python",
+      "r",
+      "git",
+      "javascript",
+      "django",
+      "postgresql",
+      "mysql",
+      "sql",
+      "spring",
+      "react",
+      "teamwork"
+    ],
+    "preferred_skills": [],
+    "required_experience": {
+      "years": 6,
+      "positions": []
+    },
+    "job_roles": [
+      "software engineer"
+    ]
+  },
+  "match_results": {
+    "overall_score": 48,
+    "component_scores": {
+      "skills": {
+        "score": 53,
+        "weight": 0.4,
+        "details": {
+          "matched": [
+            "java",
+            "python",
+            "r",
+            "git",
+            "javascript",
+            "go",
+            "teamwork"
+          ],
+          "missing": [
+            "postgresql",
+            "sql",
+            "spring",
+            "react"
+          ],
+          "semantic_matches": {
+            "django": [
+              "git",
+              0.9999999650464729
+            ],
+            "mysql": [
+              "git",
+              0.9999999650464729
+            ]
+          },
+          "preferred_matched": [],
+          "required_score": 0.6615384615384615,
+          "preferred_score": 0.0,
+          "is_data_science_role": false
+        }
+      },
+      "experience": {
+        "score": 30,
+        "weight": 0.3,
+        "details": {
+          "years": {
+            "resume": 0,
+            "required": 6,
+            "score": 0.0
+          },
+          "positions": {
+            "matched": [],
+            "missing": [],
+            "semantic_matches": {},
+            "score": 1.0
+          }
+        }
+      },
+      "job_roles": {
+        "score": 75,
+        "weight": 0.2,
+        "details": {
+          "matched": [],
+          "missing": [],
+          "semantic_matches": {
+            "software engineer": [
+              "machine learning engineer",
+              0.7964558120518146
+            ]
+          }
+        }
+      },
+      "projects": {
+        "score": 24,
+        "weight": 0.1,
+        "details": {
+          "relevant_projects": [],
+          "top_project_indices": [
+            0,
+            1,
+            6
+          ]
+        }
+      }
+    },
+    "feedback": {
+      "overall": "Moderate match. Consider addressing gaps before applying.",
+      "strengths": [
+        "Decent skills match, but some improvements possible.",
+        "Job roles align well with the position."
+      ],
+      "gaps": [
+        "Missing required skills: postgresql, sql, spring, react",
+        "Experience gap of 6 years compared to the requirement.",
+        "Projects don't strongly demonstrate relevant experience."
+      ],
+      "suggestions": [
+        "Consider acquiring or highlighting these skills: postgresql, sql, spring, react",
+        "Highlight relevant projects or transferable skills to compensate for the experience gap.",
+        "Consider adding projects that demonstrate skills relevant to this position."
+      ]
+    }
+  }
+}

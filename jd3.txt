@@ -1,0 +1,36 @@
+Job Title: Senior Software Engineer
+Company: CodeWave Innovations
+
+Job Overview:
+We are looking for a Senior Software Engineer to design, develop, and maintain high-quality software solutions for our platform. This role will involve building scalable systems and collaborating with product teams.
+
+Experience Required:
+- Minimum 6 years of experience in software development or a similar role.
+- Demonstrated ability to lead technical projects.
+
+Skills Required:
+- Expertise in Python and Java for backend development.
+- Strong understanding of web frameworks like Django or Spring.
+- Proficiency in JavaScript and React for frontend development.
+- Experience with relational databases (e.g., PostgreSQL, MySQL).
+- Knowledge of version control systems like Git.
+- Solid skills in software testing (unit, integration).
+- Strong teamwork and debugging abilities.
+
+Key Responsibilities:
+- Design and implement RESTful APIs for mobile and web applications.
+- Develop scalable microservices to support business growth.
+- Optimize code for performance and reliability.
+- Work with designers and product managers to deliver user-friendly features.
+
+Projects:
+- Built a real-time chat application using Python and WebSocket.
+- Led the migration of a legacy system to a microservices architecture.
+- Created a responsive e-commerce website with React and Django.
+
+Education:
+- Bachelor’s degree in Computer Science, Engineering, or a related field.
+
+Additional Preferences:
+- Familiarity with cloud services like AWS or Google Cloud is preferred.
+- Comfortable working in an agile development environment.

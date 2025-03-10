@@ -1,0 +1,44 @@
+Senior Software Engineer - Full Stack
+
+ABOUT THE ROLE:
+We are seeking an experienced Senior Software Engineer with a strong background in full-stack development to join our growing team. The ideal candidate will have a passion for building scalable, high-performance web applications and will play a key role in designing, developing, and maintaining our core products.
+
+RESPONSIBILITIES:
+• Design, develop, and maintain scalable and efficient code
+• Collaborate with cross-functional teams to define, design, and ship new features
+• Improve performance, quality, and reliability of our systems
+• Participate in code reviews and mentor junior developers
+• Troubleshoot and debug complex issues across the stack
+• Contribute to technical documentation and knowledge sharing
+
+REQUIREMENTS:
+• 5+ years of professional software development experience
+• Strong proficiency in Python and JavaScript
+• Experience with modern frontend frameworks (React, Angular, or Vue)
+• Experience with backend frameworks (Django, Flask, or FastAPI)
+• Solid understanding of database design and SQL/NoSQL databases
+• Experience with RESTful APIs and microservices architecture
+• Familiarity with cloud platforms (AWS, Azure, or GCP)
+• Strong problem-solving skills and attention to detail
+• Excellent communication and collaboration skills
+• Bachelor's degree in Computer Science or related field (or equivalent experience)
+
+PREFERRED SKILLS:
+• Experience with TypeScript and Node.js
+• Knowledge of containerization (Docker) and orchestration (Kubernetes)
+• Experience with CI/CD pipelines and DevOps practices
+• Familiarity with agile development methodologies
+• Experience with test-driven development and automated testing
+• Knowledge of security best practices
+• Open-source contributions
+
+BENEFITS:
+• Competitive salary and equity package
+• Health, dental, and vision insurance
+• Flexible work arrangements
+• Professional development budget
+• Generous PTO policy
+• 401(k) matching
+• Modern office with snacks and beverages
+
+We are an equal opportunity employer and value diversity at our company. We do not discriminate on the basis of race, religion, color, national origin, gender, sexual orientation, age, marital status, veteran status, or disability status. 

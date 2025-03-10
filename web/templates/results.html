@@ -1,0 +1,453 @@
+{% extends "base.html" %}
+
+{% block title %}Resume Analysis Results{% endblock %}
+
+{% block content %}
+<div class="results-container">
+    <div class="container">
+        <!-- Debug Info -->
+        <div class="debug-info" style="background-color: #f8f9fa; padding: 15px; margin-bottom: 20px; border-radius: 5px; display: none;">
+            <h3>Debug Information</h3>
+            <p>Overall Score: {{ results.match_results.overall_score }}</p>
+            <p>Profession Mismatch: {{ results.match_results.profession_mismatch }}</p>
+            <p>Component Scores: {{ results.match_results.component_scores|tojson }}</p>
+            <p>Feedback: {{ results.match_results.feedback|tojson }}</p>
+        </div>
+        
+        <!-- Overall Score -->
+        <div class="score-card fade-in-element">
+            {% if results.match_results.profession_mismatch %}
+            <div class="profession-mismatch-alert fade-in-element">
+                <div class="alert-icon">
+                    <i class="fas fa-exclamation-triangle"></i>
+                </div>
+                <div class="profession-mismatch-content">
+                    <h3>Profession Mismatch Detected</h3>
+                    <p>Your resume appears to be for a different profession than what this job requires. The compatibility score has been adjusted accordingly.</p>
+                </div>
+            </div>
+            {% endif %}
+            
+            <h2 class="score-title">Overall Compatibility Score</h2>
+            
+            <div class="score-meter" data-score="{{ results.match_results.overall_score }}">
+                <svg viewBox="0 0 200 200">
+                    <circle class="score-meter-bg" cx="100" cy="100" r="90" />
+                    <circle class="score-meter-fill" cx="100" cy="100" r="90" />
+                </svg>
+                <div class="score-meter-text">{{ results.match_results.overall_score }}</div>
+            </div>
+            
+            <div class="score-value">{{ results.match_results.overall_score }}/100</div>
+            <p class="score-description">{{ results.match_results.feedback.overall }}</p>
+            
+            <div class="score-actions">
+                <a href="/" class="btn btn-outline">
+                    <i class="fas fa-redo"></i> Analyze Another Resume
+                </a>
+                <button id="toggle-debug" class="btn btn-outline" style="margin-left: 10px;">
+                    <i class="fas fa-bug"></i> Toggle Debug
+                </button>
+            </div>
+        </div>
+        
+        <!-- Component Scores -->
+        <h2 class="results-section-title fade-in-element">Component Scores</h2>
+        <div class="component-scores">
+            <div class="component-score-card fade-in-element delay-100">
+                <h3 class="component-score-title">Skills</h3>
+                <div class="component-score-value" data-value="{{ results.match_results.component_scores.skills.score }}">
+                    {{ results.match_results.component_scores.skills.score }}
+                </div>
+                <div class="component-score-weight">
+                    Weight: {{ results.match_results.component_scores.skills.weight * 100 }}%
+                </div>
+            </div>
+            
+            <div class="component-score-card fade-in-element delay-200">
+                <h3 class="component-score-title">Experience</h3>
+                <div class="component-score-value" data-value="{{ results.match_results.component_scores.experience.score }}">
+                    {{ results.match_results.component_scores.experience.score }}
+                </div>
+                <div class="component-score-weight">
+                    Weight: {{ results.match_results.component_scores.experience.weight * 100 }}%
+                </div>
+            </div>
+            
+            <div class="component-score-card fade-in-element delay-300">
+                <h3 class="component-score-title">Job Roles</h3>
+                <div class="component-score-value" data-value="{{ results.match_results.component_scores.job_roles.score }}">
+                    {{ results.match_results.component_scores.job_roles.score }}
+                </div>
+                <div class="component-score-weight">
+                    Weight: {{ results.match_results.component_scores.job_roles.weight * 100 }}%
+                </div>
+            </div>
+            
+            <div class="component-score-card fade-in-element delay-400">
+                <h3 class="component-score-title">Projects</h3>
+                <div class="component-score-value" data-value="{{ results.match_results.component_scores.projects.score }}">
+                    {{ results.match_results.component_scores.projects.score }}
+                </div>
+                <div class="component-score-weight">
+                    Weight: {{ results.match_results.component_scores.projects.weight * 100 }}%
+                </div>
+            </div>
+        </div>
+        
+        <!-- Strengths -->
+        <div class="results-section fade-in-element">
+            <h2 class="results-section-title">
+                <i class="fas fa-check-circle"></i> Strengths
+            </h2>
+            
+            {% if results.match_results.feedback.strengths %}
+            <ul class="results-list">
+                {% for strength in results.match_results.feedback.strengths %}
+                <li class="results-list-item strength fade-in-element">
+                    <i class="fas fa-check"></i>
+                    <div>{{ strength }}</div>
+                </li>
+                {% endfor %}
+            </ul>
+            {% else %}
+            <p class="no-results">No significant strengths identified.</p>
+            {% endif %}
+        </div>
+        
+        <!-- Gaps -->
+        <div class="results-section fade-in-element">
+            <h2 class="results-section-title">
+                <i class="fas fa-exclamation-circle"></i> Gaps
+            </h2>
+            
+            <ul class="results-list">
+                {% for gap in results.match_results.feedback.gaps %}
+                <li class="results-list-item gap fade-in-element">
+                    <i class="fas fa-times"></i>
+                    <div>{{ gap }}</div>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        
+        <!-- Suggestions -->
+        <div class="results-section fade-in-element">
+            <h2 class="results-section-title">
+                <i class="fas fa-lightbulb"></i> Suggestions
+            </h2>
+            
+            <ul class="results-list">
+                {% for suggestion in results.match_results.feedback.suggestions %}
+                <li class="results-list-item suggestion fade-in-element">
+                    <i class="fas fa-arrow-right"></i>
+                    <div>{{ suggestion }}</div>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        
+        <!-- Detailed Analysis -->
+        <div class="results-section fade-in-element">
+            <h2 class="results-section-title">
+                <i class="fas fa-chart-pie"></i> Detailed Analysis
+            </h2>
+            
+            <div class="detailed-analysis">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">
+                            <i class="fas fa-file-alt"></i> Resume Analysis
+                        </h3>
+                        <button class="btn btn-sm btn-outline" data-toggle="resume-details">
+                            Show More <i class="fas fa-chevron-down"></i>
+                        </button>
+                    </div>
+                    
+                    <div id="resume-details" class="card-content collapsible">
+                        <div class="detail-section">
+                            <h4 class="detail-title">Skills</h4>
+                            <div class="detail-content">
+                                <div class="tag-list">
+                                    {% for skill in results.resume_data.skills %}
+                                    <span class="tag">{{ skill }}</span>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="detail-section">
+                            <h4 class="detail-title">Experience</h4>
+                            <div class="detail-content">
+                                <p>{{ results.resume_data.experience.years }} years</p>
+                                <div class="tag-list">
+                                    {% for position in results.resume_data.experience.positions %}
+                                    <span class="tag">{{ position }}</span>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="detail-section">
+                            <h4 class="detail-title">Job Roles</h4>
+                            <div class="detail-content">
+                                <div class="tag-list">
+                                    {% for role in results.resume_data.job_roles %}
+                                    <span class="tag">{{ role }}</span>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="detail-section">
+                            <h4 class="detail-title">Projects</h4>
+                            <div class="detail-content">
+                                {% for project in results.resume_data.projects %}
+                                <div class="project-item">
+                                    <h5 class="project-name">{{ project.name }}</h5>
+                                    <div class="tag-list">
+                                        {% for skill in project.skills %}
+                                        <span class="tag tag-sm">{{ skill }}</span>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">
+                            <i class="fas fa-briefcase"></i> Job Description Analysis
+                        </h3>
+                        <button class="btn btn-sm btn-outline" data-toggle="jd-details">
+                            Show More <i class="fas fa-chevron-down"></i>
+                        </button>
+                    </div>
+                    
+                    <div id="jd-details" class="card-content collapsible">
+                        <div class="detail-section">
+                            <h4 class="detail-title">Required Skills</h4>
+                            <div class="detail-content">
+                                <div class="tag-list">
+                                    {% for skill in results.jd_data.required_skills %}
+                                    <span class="tag">{{ skill }}</span>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="detail-section">
+                            <h4 class="detail-title">Preferred Skills</h4>
+                            <div class="detail-content">
+                                <div class="tag-list">
+                                    {% for skill in results.jd_data.preferred_skills %}
+                                    <span class="tag tag-preferred">{{ skill }}</span>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="detail-section">
+                            <h4 class="detail-title">Required Experience</h4>
+                            <div class="detail-content">
+                                <p>{{ results.jd_data.required_experience.years }} years</p>
+                                <div class="tag-list">
+                                    {% for position in results.jd_data.required_experience.positions %}
+                                    <span class="tag">{{ position }}</span>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="detail-section">
+                            <h4 class="detail-title">Job Roles</h4>
+                            <div class="detail-content">
+                                <div class="tag-list">
+                                    {% for role in results.jd_data.job_roles %}
+                                    <span class="tag">{{ role }}</span>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- CTA -->
+        <div class="results-cta fade-in-element">
+            <a href="/" class="btn btn-primary btn-lg">
+                <i class="fas fa-redo"></i> Analyze Another Resume
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    /* Additional styles for the results page */
+    .results-container {
+        padding-top: 3rem;
+        padding-bottom: 5rem;
+    }
+    
+    .results-section {
+        margin-bottom: 3rem;
+    }
+    
+    .no-results {
+        color: var(--text-secondary);
+        font-style: italic;
+        padding: 1rem;
+    }
+    
+    .detailed-analysis {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    @media (min-width: 992px) {
+        .detailed-analysis {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+    
+    .card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1.5rem;
+    }
+    
+    .btn-sm {
+        padding: 0.5rem 1rem;
+        font-size: 0.875rem;
+    }
+    
+    .collapsible {
+        max-height: 200px;
+        overflow: hidden;
+        transition: max-height 0.5s ease;
+    }
+    
+    .collapsible.expanded {
+        max-height: 2000px;
+    }
+    
+    .detail-section {
+        margin-bottom: 1.5rem;
+    }
+    
+    .detail-title {
+        font-size: 1.125rem;
+        margin-bottom: 0.75rem;
+        color: var(--text-primary);
+    }
+    
+    .tag-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+    
+    .tag {
+        display: inline-block;
+        padding: 0.5rem 0.75rem;
+        background-color: rgba(99, 102, 241, 0.1);
+        color: var(--primary-color);
+        border-radius: var(--radius-full);
+        font-size: 0.875rem;
+        font-weight: 500;
+    }
+    
+    .tag-sm {
+        padding: 0.25rem 0.5rem;
+        font-size: 0.75rem;
+    }
+    
+    .tag-preferred {
+        background-color: rgba(16, 185, 129, 0.1);
+        color: var(--secondary-color);
+    }
+    
+    .project-item {
+        margin-bottom: 1rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+    
+    .project-item:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+    
+    .project-name {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+        color: var(--text-primary);
+    }
+    
+    .results-cta {
+        text-align: center;
+        margin-top: 3rem;
+    }
+    
+    .profession-mismatch-alert {
+        margin-bottom: 2rem;
+    }
+    
+    .alert-icon {
+        font-size: 1.5rem;
+        color: var(--accent-red);
+    }
+    
+    .score-actions {
+        margin-top: 2rem;
+    }
+</style>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        console.log('Results page loaded');
+        
+        // Toggle debug info
+        document.getElementById('toggle-debug').addEventListener('click', function() {
+            const debugInfo = document.querySelector('.debug-info');
+            debugInfo.style.display = debugInfo.style.display === 'none' ? 'block' : 'none';
+        });
+        
+        // Log data for debugging
+        console.log('Overall Score: {{ results.match_results.overall_score }}');
+        console.log('Profession Mismatch: {{ results.match_results.profession_mismatch|tojson }}');
+        
+        try {
+            // Initialize score meter
+            console.log('Initializing score meter');
+            initScoreMeter();
+            
+            // Initialize component scores animation
+            console.log('Initializing component scores animation');
+            animateComponentScores();
+            
+            // Initialize collapsible sections
+            console.log('Initializing collapsible sections');
+            document.querySelectorAll('[data-toggle]').forEach(button => {
+                button.addEventListener('click', function() {
+                    const sectionId = this.getAttribute('data-toggle');
+                    toggleSection(sectionId);
+                });
+            });
+        } catch (error) {
+            console.error('Error initializing results page:', error);
+        }
+    });
+</script>
+{% endblock %} 

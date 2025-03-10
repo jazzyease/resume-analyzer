@@ -1,0 +1,414 @@
+{% extends "base.html" %}
+
+{% block title %}Resume Analyzer - Match Your Resume to Job Descriptions{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <h1 class="hero-title fade-in-element">Resume Analyzer</h1>
+            <p class="hero-subtitle fade-in-element">
+                Analyze your resume against job descriptions to find your perfect match.
+                Get detailed feedback and improve your chances of landing your dream job.
+            </p>
+            <a href="#analyzer" class="btn btn-primary btn-lg fade-in-element">Get Started</a>
+        </div>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="features">
+    <div class="container">
+        <h2 class="section-title text-center fade-in-element">How It Works</h2>
+        <div class="features-grid">
+            <div class="feature-card slide-left-element">
+                <div class="feature-icon">
+                    <i class="fas fa-upload"></i>
+                </div>
+                <h3 class="feature-title">Upload</h3>
+                <p class="feature-description">
+                    Upload your resume (PDF) and a job description (PDF or text) to get started.
+                </p>
+            </div>
+            <div class="feature-card fade-in-element">
+                <div class="feature-icon">
+                    <i class="fas fa-cogs"></i>
+                </div>
+                <h3 class="feature-title">Analyze</h3>
+                <p class="feature-description">
+                    Our AI analyzes your resume against the job description using advanced NLP techniques.
+                </p>
+            </div>
+            <div class="feature-card slide-right-element">
+                <div class="feature-icon">
+                    <i class="fas fa-chart-bar"></i>
+                </div>
+                <h3 class="feature-title">Results</h3>
+                <p class="feature-description">
+                    Get a detailed compatibility score and actionable feedback to improve your resume.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Analyzer Section -->
+<section id="analyzer" class="analyzer">
+    <div class="container">
+        <div class="card">
+            <h2 class="card-title text-center fade-in-element">Analyze Your Resume</h2>
+            <div class="form-container">
+                <form id="analyzer-form" action="/analyze" method="post" enctype="multipart/form-data">
+                    <div class="form-group fade-in-element">
+                        <label for="resume" class="form-label">Upload Your Resume (PDF)</label>
+                        <div class="file-upload">
+                            <div class="file-upload-icon">
+                                <i class="fas fa-file-pdf"></i>
+                            </div>
+                            <div class="file-upload-text">
+                                <p>Drag and drop your resume here</p>
+                                <p>or</p>
+                                <p>Click to browse</p>
+                            </div>
+                            <input type="file" id="resume" name="resume" accept=".pdf" required>
+                        </div>
+                        <div class="file-name" style="display: none;"></div>
+                    </div>
+                    
+                    <div class="form-group fade-in-element">
+                        <label for="job_description" class="form-label">Upload Job Description (PDF or TXT)</label>
+                        <div class="file-upload">
+                            <div class="file-upload-icon">
+                                <i class="fas fa-file-alt"></i>
+                            </div>
+                            <div class="file-upload-text">
+                                <p>Drag and drop your job description here</p>
+                                <p>or</p>
+                                <p>Click to browse</p>
+                            </div>
+                            <input type="file" id="job_description" name="job_description" accept=".pdf,.txt" required>
+                        </div>
+                        <div class="file-name" style="display: none;"></div>
+                    </div>
+                    
+                    <div class="form-group text-center fade-in-element">
+                        <button type="submit" class="btn btn-primary btn-lg">
+                            <i class="fas fa-search"></i> Analyze
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Benefits Section -->
+<section class="benefits">
+    <div class="container">
+        <h2 class="section-title text-center fade-in-element">Why Use Resume Analyzer?</h2>
+        <div class="benefits-grid">
+            <div class="benefit-card fade-in-element">
+                <div class="benefit-icon">
+                    <i class="fas fa-bullseye"></i>
+                </div>
+                <h3 class="benefit-title">Accurate Matching</h3>
+                <p class="benefit-description">
+                    Our advanced AI algorithms provide precise matching between your resume and job requirements.
+                </p>
+            </div>
+            <div class="benefit-card fade-in-element">
+                <div class="benefit-icon">
+                    <i class="fas fa-industry"></i>
+                </div>
+                <h3 class="benefit-title">Works for Any Industry</h3>
+                <p class="benefit-description">
+                    Whether you're in tech, healthcare, finance, or any other field, our analyzer works for all professions.
+                </p>
+            </div>
+            <div class="benefit-card fade-in-element">
+                <div class="benefit-icon">
+                    <i class="fas fa-lightbulb"></i>
+                </div>
+                <h3 class="benefit-title">Actionable Insights</h3>
+                <p class="benefit-description">
+                    Get specific suggestions to improve your resume and increase your chances of getting hired.
+                </p>
+            </div>
+            <div class="benefit-card fade-in-element">
+                <div class="benefit-icon">
+                    <i class="fas fa-lock"></i>
+                </div>
+                <h3 class="benefit-title">Privacy First</h3>
+                <p class="benefit-description">
+                    Your data is processed securely and never stored permanently on our servers.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta">
+    <div class="container">
+        <div class="cta-content text-center">
+            <h2 class="cta-title fade-in-element">Ready to Boost Your Job Search?</h2>
+            <p class="cta-description fade-in-element">
+                Start analyzing your resume against job descriptions today and increase your chances of landing your dream job.
+            </p>
+            <a href="#analyzer" class="btn btn-primary btn-lg fade-in-element">Get Started Now</a>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    /* Additional styles for the index page */
+    .features {
+        padding: 5rem 0;
+        background-color: var(--card-bg);
+    }
+    
+    .section-title {
+        font-size: 2.5rem;
+        margin-bottom: 3rem;
+        color: var(--text-primary);
+    }
+    
+    .text-center {
+        text-align: center;
+    }
+    
+    .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+    }
+    
+    .feature-card {
+        padding: 2rem;
+        border-radius: var(--radius-md);
+        background-color: var(--bg-color);
+        box-shadow: var(--shadow-md);
+        text-align: center;
+        transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+    }
+    
+    .feature-card:hover {
+        transform: translateY(-10px);
+        box-shadow: var(--shadow-lg);
+    }
+    
+    .feature-icon {
+        font-size: 3rem;
+        color: var(--primary-color);
+        margin-bottom: 1.5rem;
+    }
+    
+    .feature-title {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        color: var(--text-primary);
+    }
+    
+    .feature-description {
+        color: var(--text-secondary);
+    }
+    
+    .analyzer {
+        padding: 5rem 0;
+        background: linear-gradient(135deg, rgba(99, 102, 241, 0.05), rgba(139, 92, 246, 0.05));
+    }
+    
+    .benefits {
+        padding: 5rem 0;
+    }
+    
+    .benefits-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+    }
+    
+    .benefit-card {
+        padding: 2rem;
+        border-radius: var(--radius-md);
+        background-color: var(--card-bg);
+        box-shadow: var(--shadow-md);
+        text-align: center;
+        transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+    }
+    
+    .benefit-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-lg);
+    }
+    
+    .benefit-icon {
+        font-size: 2.5rem;
+        color: var(--secondary-color);
+        margin-bottom: 1.5rem;
+    }
+    
+    .benefit-title {
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+        color: var(--text-primary);
+    }
+    
+    .benefit-description {
+        color: var(--text-secondary);
+    }
+    
+    .cta {
+        padding: 5rem 0;
+        background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.1));
+    }
+    
+    .cta-title {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+        color: var(--text-primary);
+    }
+    
+    .cta-description {
+        font-size: 1.25rem;
+        color: var(--text-secondary);
+        max-width: 700px;
+        margin: 0 auto 2.5rem;
+    }
+    
+    .footer {
+        padding: 3rem 0;
+        background-color: var(--card-bg);
+        border-top: 1px solid rgba(0, 0, 0, 0.05);
+    }
+    
+    .footer-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .footer-copyright {
+        color: var(--text-secondary);
+    }
+    
+    .footer-links {
+        display: flex;
+        gap: 1.5rem;
+    }
+    
+    .footer-link {
+        color: var(--text-secondary);
+        transition: color var(--transition-fast);
+    }
+    
+    .footer-link:hover {
+        color: var(--primary-color);
+    }
+    
+    .nav-list {
+        display: flex;
+        list-style: none;
+        gap: 1.5rem;
+    }
+    
+    .nav-link {
+        color: var(--text-secondary);
+        transition: color var(--transition-fast);
+    }
+    
+    .nav-link:hover {
+        color: var(--primary-color);
+    }
+    
+    /* Error message */
+    .error-message {
+        padding: 1rem;
+        margin-bottom: 1.5rem;
+        border-radius: var(--radius-md);
+        background-color: rgba(239, 68, 68, 0.1);
+        border-left: 4px solid var(--accent-red);
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    
+    .error-message.show {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    .error-icon {
+        font-size: 1.5rem;
+        color: var(--accent-red);
+    }
+    
+    .error-content h3 {
+        font-size: 1.25rem;
+        margin-bottom: 0.5rem;
+        color: var(--accent-red);
+    }
+    
+    .error-content p {
+        color: var(--text-secondary);
+    }
+    
+    /* Loading spinner for button */
+    .loading-spinner-small {
+        display: inline-block;
+        width: 1rem;
+        height: 1rem;
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        border-top-color: white;
+        animation: spin 1s ease-in-out infinite;
+        margin-right: 0.5rem;
+    }
+    
+    @media (max-width: 768px) {
+        .features-grid,
+        .benefits-grid {
+            grid-template-columns: 1fr;
+        }
+        
+        .footer-content {
+            flex-direction: column;
+            gap: 1.5rem;
+            text-align: center;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+        }
+        
+        .cta-title {
+            font-size: 2rem;
+        }
+    }
+</style>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                window.scrollTo({
+                    top: target.offsetTop - 100,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+</script>
+{% endblock %} 

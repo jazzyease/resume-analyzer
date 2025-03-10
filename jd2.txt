@@ -1,0 +1,35 @@
+Job Title: Senior Data Scientist
+Company: TechNova Solutions
+
+Job Overview:
+We are seeking a Senior Data Scientist to join our analytics team. This role will focus on leveraging data to drive business insights and improve our product offerings.
+
+Experience Required:
+- Minimum 5 years of experience in data science or a related field.
+- Proven track record of working with cross-functional teams.
+
+Skills Required:
+- Proficiency in Python and R for data analysis.
+- Strong knowledge of machine learning algorithms (e.g., regression, clustering, neural networks).
+- Experience with SQL for database querying.
+- Expertise in data visualization tools like Tableau or Power BI.
+- Familiarity with big data frameworks such as Hadoop or Spark.
+- Excellent problem-solving and communication skills.
+
+Key Responsibilities:
+- Build and deploy machine learning models to predict customer behavior.
+- Analyze large datasets to identify trends and patterns.
+- Collaborate with engineers to integrate models into production systems.
+- Present findings to stakeholders using visualizations and reports.
+
+Projects:
+- Led a project to develop a recommendation system using collaborative filtering.
+- Worked on a customer churn prediction model that improved retention by 15%.
+- Designed a dashboard for real-time sales analytics.
+
+Education:
+- Bachelor’s or Master’s degree in Computer Science, Statistics, or a related field.
+
+Additional Preferences:
+- Experience with cloud platforms like AWS or Azure is a plus.
+- Ability to work in a fast-paced environment and adapt to changing priorities.
