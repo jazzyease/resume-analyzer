@@ -434,17 +434,12 @@
             initScoreMeter();
             
             // Initialize component scores animation
-            console.log('Initializing component scores animation');
-            animateComponentScores();
+            console.log('Initializing component scores');
+            initComponentScores();
             
             // Initialize collapsible sections
             console.log('Initializing collapsible sections');
-            document.querySelectorAll('[data-toggle]').forEach(button => {
-                button.addEventListener('click', function() {
-                    const sectionId = this.getAttribute('data-toggle');
-                    toggleSection(sectionId);
-                });
-            });
+            initCollapsibleSections();
         } catch (error) {
             console.error('Error initializing results page:', error);
         }
