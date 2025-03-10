@@ -6,13 +6,10 @@
 <!-- Hero Section -->
 <section class="hero">
     <div class="container">
-        <div class="hero-content">
-            <h1 class="hero-title fade-in-element">Resume Analyzer</h1>
-            <p class="hero-subtitle fade-in-element">
-                Analyze your resume against job descriptions to find your perfect match.
-                Get detailed feedback and improve your chances of landing your dream job.
-            </p>
-            <a href="#analyzer" class="btn btn-primary btn-lg fade-in-element">Get Started</a>
+        <div class="hero-container">
+            <h1 class="hero-title">Resume Analyzer</h1>
+            <p class="hero-subtitle">Analyze your resume against job descriptions to find the perfect match. Get insights on how to improve your resume for specific job opportunities.</p>
+            <a href="#analyzer" class="btn btn-primary btn-lg">Analyze Your Resume</a>
         </div>
     </div>
 </section>
@@ -20,34 +17,32 @@
 <!-- Features Section -->
 <section class="features">
     <div class="container">
-        <h2 class="section-title text-center fade-in-element">How It Works</h2>
+        <h2 class="section-title">How It Works</h2>
+        <p class="section-subtitle">Our AI-powered resume analyzer helps you understand how well your resume matches specific job descriptions.</p>
+        
         <div class="features-grid">
-            <div class="feature-card slide-left-element">
+            <div class="feature-card">
                 <div class="feature-icon">
                     <i class="fas fa-upload"></i>
                 </div>
                 <h3 class="feature-title">Upload</h3>
-                <p class="feature-description">
-                    Upload your resume (PDF) and a job description (PDF or text) to get started.
-                </p>
+                <p class="feature-description">Upload your resume and a job description you're interested in. We support PDF and TXT formats.</p>
             </div>
-            <div class="feature-card fade-in-element">
+            
+            <div class="feature-card">
                 <div class="feature-icon">
-                    <i class="fas fa-cogs"></i>
+                    <i class="fas fa-search"></i>
                 </div>
                 <h3 class="feature-title">Analyze</h3>
-                <p class="feature-description">
-                    Our AI analyzes your resume against the job description using advanced NLP techniques.
-                </p>
+                <p class="feature-description">Our AI analyzes your resume against the job description, looking at skills, experience, and more.</p>
             </div>
-            <div class="feature-card slide-right-element">
+            
+            <div class="feature-card">
                 <div class="feature-icon">
                     <i class="fas fa-chart-bar"></i>
                 </div>
                 <h3 class="feature-title">Results</h3>
-                <p class="feature-description">
-                    Get a detailed compatibility score and actionable feedback to improve your resume.
-                </p>
+                <p class="feature-description">Get a detailed report with compatibility score, strengths, gaps, and suggestions for improvement.</p>
             </div>
         </div>
     </div>
@@ -56,44 +51,60 @@
 <!-- Analyzer Section -->
 <section id="analyzer" class="analyzer">
     <div class="container">
-        <div class="card">
-            <h2 class="card-title text-center fade-in-element">Analyze Your Resume</h2>
-            <div class="form-container">
+        <div class="analyzer-container">
+            <div class="analyzer-content">
+                <h2 class="analyzer-title">Analyze Your Resume</h2>
+                <p class="analyzer-description">Upload your resume and a job description to see how well they match. Get insights on how to improve your resume for better job opportunities.</p>
+                
+                <div class="sample-files">
+                    <h3>Don't have files ready?</h3>
+                    <p>Try our sample files to see how the analyzer works:</p>
+                    <div class="sample-buttons">
+                        <button id="use-sample-resume" class="btn btn-outline">Use Sample Resume</button>
+                        <button id="use-sample-jd" class="btn btn-outline">Use Sample Job Description</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="analyzer-form">
+                <h3 class="form-title">Upload Your Files</h3>
                 <form id="analyzer-form" action="/analyze" method="post" enctype="multipart/form-data">
-                    <div class="form-group fade-in-element">
-                        <label for="resume" class="form-label">Upload Your Resume (PDF)</label>
-                        <div class="file-upload">
+                    <div class="form-group">
+                        <label class="form-label">Resume (PDF)</label>
+                        <div class="file-upload" id="resume-upload">
                             <div class="file-upload-icon">
-                                <i class="fas fa-file-pdf"></i>
+                                <i class="fas fa-file-upload"></i>
                             </div>
-                            <div class="file-upload-text">
-                                <p>Drag and drop your resume here</p>
-                                <p>or</p>
-                                <p>Click to browse</p>
-                            </div>
-                            <input type="file" id="resume" name="resume" accept=".pdf" required>
+                            <div class="file-upload-text">Drag & drop your resume here</div>
+                            <div class="file-upload-hint">or click to browse (PDF only)</div>
+                            <input type="file" name="resume" accept=".pdf" id="resume-input">
                         </div>
-                        <div class="file-name" style="display: none;"></div>
+                        <div class="file-preview" id="resume-preview" style="display: none;">
+                            <i class="fas fa-file-pdf file-preview-icon"></i>
+                            <span class="file-preview-name" id="resume-name"></span>
+                            <i class="fas fa-times file-preview-remove" id="resume-remove"></i>
+                        </div>
                     </div>
                     
-                    <div class="form-group fade-in-element">
-                        <label for="job_description" class="form-label">Upload Job Description (PDF or TXT)</label>
-                        <div class="file-upload">
+                    <div class="form-group">
+                        <label class="form-label">Job Description (PDF or TXT)</label>
+                        <div class="file-upload" id="jd-upload">
                             <div class="file-upload-icon">
-                                <i class="fas fa-file-alt"></i>
+                                <i class="fas fa-file-upload"></i>
                             </div>
-                            <div class="file-upload-text">
-                                <p>Drag and drop your job description here</p>
-                                <p>or</p>
-                                <p>Click to browse</p>
-                            </div>
-                            <input type="file" id="job_description" name="job_description" accept=".pdf,.txt" required>
+                            <div class="file-upload-text">Drag & drop your job description here</div>
+                            <div class="file-upload-hint">or click to browse (PDF or TXT)</div>
+                            <input type="file" name="job_description" accept=".pdf,.txt" id="jd-input">
                         </div>
-                        <div class="file-name" style="display: none;"></div>
+                        <div class="file-preview" id="jd-preview" style="display: none;">
+                            <i class="fas fa-file-alt file-preview-icon"></i>
+                            <span class="file-preview-name" id="jd-name"></span>
+                            <i class="fas fa-times file-preview-remove" id="jd-remove"></i>
+                        </div>
                     </div>
                     
-                    <div class="form-group text-center fade-in-element">
-                        <button type="submit" class="btn btn-primary btn-lg">
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary form-submit">
                             <i class="fas fa-search"></i> Analyze
                         </button>
                     </div>
@@ -106,43 +117,39 @@
 <!-- Benefits Section -->
 <section class="benefits">
     <div class="container">
-        <h2 class="section-title text-center fade-in-element">Why Use Resume Analyzer?</h2>
+        <h2 class="section-title">Why Use Resume Analyzer?</h2>
+        
         <div class="benefits-grid">
-            <div class="benefit-card fade-in-element">
+            <div class="benefit-card">
                 <div class="benefit-icon">
                     <i class="fas fa-bullseye"></i>
                 </div>
                 <h3 class="benefit-title">Accurate Matching</h3>
-                <p class="benefit-description">
-                    Our advanced AI algorithms provide precise matching between your resume and job requirements.
-                </p>
+                <p class="benefit-description">Our AI uses advanced NLP techniques to accurately match your resume with job requirements.</p>
             </div>
-            <div class="benefit-card fade-in-element">
+            
+            <div class="benefit-card">
                 <div class="benefit-icon">
                     <i class="fas fa-industry"></i>
                 </div>
-                <h3 class="benefit-title">Works for Any Industry</h3>
-                <p class="benefit-description">
-                    Whether you're in tech, healthcare, finance, or any other field, our analyzer works for all professions.
-                </p>
+                <h3 class="benefit-title">Industry Versatile</h3>
+                <p class="benefit-description">Works across various industries and job roles, from tech to finance to healthcare.</p>
             </div>
-            <div class="benefit-card fade-in-element">
+            
+            <div class="benefit-card">
                 <div class="benefit-icon">
                     <i class="fas fa-lightbulb"></i>
                 </div>
                 <h3 class="benefit-title">Actionable Insights</h3>
-                <p class="benefit-description">
-                    Get specific suggestions to improve your resume and increase your chances of getting hired.
-                </p>
+                <p class="benefit-description">Get specific suggestions on how to improve your resume for each job application.</p>
             </div>
-            <div class="benefit-card fade-in-element">
+            
+            <div class="benefit-card">
                 <div class="benefit-icon">
                     <i class="fas fa-lock"></i>
                 </div>
                 <h3 class="benefit-title">Privacy First</h3>
-                <p class="benefit-description">
-                    Your data is processed securely and never stored permanently on our servers.
-                </p>
+                <p class="benefit-description">Your data is processed securely and never stored or shared with third parties.</p>
             </div>
         </div>
     </div>
@@ -151,12 +158,10 @@
 <!-- CTA Section -->
 <section class="cta">
     <div class="container">
-        <div class="cta-content text-center">
-            <h2 class="cta-title fade-in-element">Ready to Boost Your Job Search?</h2>
-            <p class="cta-description fade-in-element">
-                Start analyzing your resume against job descriptions today and increase your chances of landing your dream job.
-            </p>
-            <a href="#analyzer" class="btn btn-primary btn-lg fade-in-element">Get Started Now</a>
+        <div class="cta-container">
+            <h2 class="cta-title">Ready to Improve Your Job Applications?</h2>
+            <p class="cta-description">Start analyzing your resume against job descriptions today and increase your chances of landing your dream job.</p>
+            <a href="#analyzer" class="btn btn-cta btn-lg">Analyze Your Resume Now</a>
         </div>
     </div>
 </section>
@@ -165,250 +170,222 @@
 {% block extra_css %}
 <style>
     /* Additional styles for the index page */
-    .features {
-        padding: 5rem 0;
-        background-color: var(--card-bg);
+    .sample-files {
+        margin-top: 2rem;
+        padding: 1.5rem;
+        background-color: var(--bg-tertiary);
+        border-radius: var(--radius-lg);
     }
     
-    .section-title {
-        font-size: 2.5rem;
-        margin-bottom: 3rem;
-        color: var(--text-primary);
-    }
-    
-    .text-center {
-        text-align: center;
-    }
-    
-    .features-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 2rem;
-    }
-    
-    .feature-card {
-        padding: 2rem;
-        border-radius: var(--radius-md);
-        background-color: var(--bg-color);
-        box-shadow: var(--shadow-md);
-        text-align: center;
-        transition: transform var(--transition-normal), box-shadow var(--transition-normal);
-    }
-    
-    .feature-card:hover {
-        transform: translateY(-10px);
-        box-shadow: var(--shadow-lg);
-    }
-    
-    .feature-icon {
-        font-size: 3rem;
-        color: var(--primary-color);
-        margin-bottom: 1.5rem;
-    }
-    
-    .feature-title {
-        font-size: 1.5rem;
-        margin-bottom: 1rem;
-        color: var(--text-primary);
-    }
-    
-    .feature-description {
-        color: var(--text-secondary);
-    }
-    
-    .analyzer {
-        padding: 5rem 0;
-        background: linear-gradient(135deg, rgba(99, 102, 241, 0.05), rgba(139, 92, 246, 0.05));
-    }
-    
-    .benefits {
-        padding: 5rem 0;
-    }
-    
-    .benefits-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 2rem;
-    }
-    
-    .benefit-card {
-        padding: 2rem;
-        border-radius: var(--radius-md);
-        background-color: var(--card-bg);
-        box-shadow: var(--shadow-md);
-        text-align: center;
-        transition: transform var(--transition-normal), box-shadow var(--transition-normal);
-    }
-    
-    .benefit-card:hover {
-        transform: translateY(-5px);
-        box-shadow: var(--shadow-lg);
-    }
-    
-    .benefit-icon {
-        font-size: 2.5rem;
-        color: var(--secondary-color);
-        margin-bottom: 1.5rem;
-    }
-    
-    .benefit-title {
+    .sample-files h3 {
         font-size: 1.25rem;
-        margin-bottom: 1rem;
-        color: var(--text-primary);
+        margin-bottom: 0.75rem;
     }
     
-    .benefit-description {
-        color: var(--text-secondary);
-    }
-    
-    .cta {
-        padding: 5rem 0;
-        background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.1));
-    }
-    
-    .cta-title {
-        font-size: 2.5rem;
-        margin-bottom: 1.5rem;
-        color: var(--text-primary);
-    }
-    
-    .cta-description {
-        font-size: 1.25rem;
-        color: var(--text-secondary);
-        max-width: 700px;
-        margin: 0 auto 2.5rem;
-    }
-    
-    .footer {
-        padding: 3rem 0;
-        background-color: var(--card-bg);
-        border-top: 1px solid rgba(0, 0, 0, 0.05);
-    }
-    
-    .footer-content {
+    .sample-buttons {
         display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-    
-    .footer-copyright {
-        color: var(--text-secondary);
-    }
-    
-    .footer-links {
-        display: flex;
-        gap: 1.5rem;
-    }
-    
-    .footer-link {
-        color: var(--text-secondary);
-        transition: color var(--transition-fast);
-    }
-    
-    .footer-link:hover {
-        color: var(--primary-color);
-    }
-    
-    .nav-list {
-        display: flex;
-        list-style: none;
-        gap: 1.5rem;
-    }
-    
-    .nav-link {
-        color: var(--text-secondary);
-        transition: color var(--transition-fast);
-    }
-    
-    .nav-link:hover {
-        color: var(--primary-color);
-    }
-    
-    /* Error message */
-    .error-message {
-        padding: 1rem;
-        margin-bottom: 1.5rem;
-        border-radius: var(--radius-md);
-        background-color: rgba(239, 68, 68, 0.1);
-        border-left: 4px solid var(--accent-red);
-        display: flex;
-        align-items: flex-start;
         gap: 1rem;
-        opacity: 0;
-        transform: translateY(-10px);
-        transition: opacity 0.3s ease, transform 0.3s ease;
-    }
-    
-    .error-message.show {
-        opacity: 1;
-        transform: translateY(0);
-    }
-    
-    .error-icon {
-        font-size: 1.5rem;
-        color: var(--accent-red);
-    }
-    
-    .error-content h3 {
-        font-size: 1.25rem;
-        margin-bottom: 0.5rem;
-        color: var(--accent-red);
-    }
-    
-    .error-content p {
-        color: var(--text-secondary);
-    }
-    
-    /* Loading spinner for button */
-    .loading-spinner-small {
-        display: inline-block;
-        width: 1rem;
-        height: 1rem;
-        border: 2px solid rgba(255, 255, 255, 0.3);
-        border-radius: 50%;
-        border-top-color: white;
-        animation: spin 1s ease-in-out infinite;
-        margin-right: 0.5rem;
+        margin-top: 1rem;
+        flex-wrap: wrap;
     }
     
     @media (max-width: 768px) {
-        .features-grid,
-        .benefits-grid {
-            grid-template-columns: 1fr;
-        }
-        
-        .footer-content {
+        .sample-buttons {
             flex-direction: column;
-            gap: 1.5rem;
-            text-align: center;
         }
-        
-        .section-title {
-            font-size: 2rem;
-        }
-        
-        .cta-title {
-            font-size: 2rem;
-        }
+    }
+    
+    /* Success message */
+    .success-message {
+        padding: 1rem;
+        margin-bottom: 1.5rem;
+        border-radius: var(--radius-md);
+        background-color: rgba(16, 185, 129, 0.1);
+        border-left: 4px solid var(--secondary-color);
+        color: var(--secondary-color);
+        font-weight: 500;
+        animation: fadeIn 0.3s ease-in-out;
+    }
+    
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
     }
 </style>
 {% endblock %}
 
 {% block extra_js %}
 <script>
-    // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
+    document.addEventListener('DOMContentLoaded', function() {
+        // Add success message container if it doesn't exist
+        if (!document.querySelector('.success-message')) {
+            const formContainer = document.querySelector('.analyzer-form');
+            const form = document.querySelector('#analyzer-form');
+            const successMessage = document.createElement('div');
+            successMessage.className = 'success-message';
+            successMessage.style.display = 'none';
+            successMessage.innerHTML = '<p></p>';
+            formContainer.insertBefore(successMessage, form);
+        }
+        
+        // Function to show success message
+        function showSuccess(message) {
+            const successMessage = document.querySelector('.success-message');
+            successMessage.querySelector('p').textContent = message;
+            successMessage.style.display = 'block';
             
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                window.scrollTo({
-                    top: target.offsetTop - 100,
-                    behavior: 'smooth'
-                });
-            }
+            // Auto-hide after 5 seconds
+            setTimeout(() => {
+                successMessage.style.display = 'none';
+            }, 5000);
+        }
+        
+        // File upload event listeners
+        const resumeInput = document.getElementById('resume-input');
+        const jdInput = document.getElementById('jd-input');
+        
+        if (resumeInput) {
+            resumeInput.addEventListener('change', function() {
+                if (this.files.length > 0) {
+                    const resumePreview = document.getElementById('resume-preview');
+                    const resumeName = document.getElementById('resume-name');
+                    
+                    resumeName.textContent = this.files[0].name;
+                    resumePreview.style.display = 'flex';
+                    
+                    showSuccess('Resume uploaded successfully!');
+                }
+            });
+        }
+        
+        if (jdInput) {
+            jdInput.addEventListener('change', function() {
+                if (this.files.length > 0) {
+                    const jdPreview = document.getElementById('jd-preview');
+                    const jdName = document.getElementById('jd-name');
+                    
+                    jdName.textContent = this.files[0].name;
+                    jdPreview.style.display = 'flex';
+                    
+                    showSuccess('Job description uploaded successfully!');
+                }
+            });
+        }
+        
+        // Sample file functionality
+        const useSampleResumeBtn = document.getElementById('use-sample-resume');
+        const useSampleJdBtn = document.getElementById('use-sample-jd');
+        
+        if (useSampleResumeBtn) {
+            useSampleResumeBtn.addEventListener('click', function() {
+                // Create a File object from the sample resume
+                fetch('/static/samples/sample_resume_data_science.pdf')
+                    .then(response => response.blob())
+                    .then(blob => {
+                        const file = new File([blob], 'sample_resume_data_science.pdf', { type: 'application/pdf' });
+                        
+                        // Set the file to the input
+                        const dataTransfer = new DataTransfer();
+                        dataTransfer.items.add(file);
+                        
+                        const resumeInput = document.getElementById('resume-input');
+                        resumeInput.files = dataTransfer.files;
+                        
+                        // Trigger change event
+                        const event = new Event('change', { bubbles: true });
+                        resumeInput.dispatchEvent(event);
+                        
+                        // Show preview
+                        const resumePreview = document.getElementById('resume-preview');
+                        const resumeName = document.getElementById('resume-name');
+                        
+                        resumeName.textContent = file.name;
+                        resumePreview.style.display = 'flex';
+                        
+                        showSuccess('Sample resume loaded successfully!');
+                    })
+                    .catch(error => {
+                        console.error('Error loading sample resume:', error);
+                        alert('Error loading sample resume. Please try uploading your own file.');
+                    });
+            });
+        }
+        
+        if (useSampleJdBtn) {
+            useSampleJdBtn.addEventListener('click', function() {
+                // Create a File object from the sample job description
+                fetch('/static/samples/sample_jd_software_engineer.pdf')
+                    .then(response => response.blob())
+                    .then(blob => {
+                        const file = new File([blob], 'sample_jd_software_engineer.pdf', { type: 'application/pdf' });
+                        
+                        // Set the file to the input
+                        const dataTransfer = new DataTransfer();
+                        dataTransfer.items.add(file);
+                        
+                        const jdInput = document.getElementById('jd-input');
+                        jdInput.files = dataTransfer.files;
+                        
+                        // Trigger change event
+                        const event = new Event('change', { bubbles: true });
+                        jdInput.dispatchEvent(event);
+                        
+                        // Show preview
+                        const jdPreview = document.getElementById('jd-preview');
+                        const jdName = document.getElementById('jd-name');
+                        
+                        jdName.textContent = file.name;
+                        jdPreview.style.display = 'flex';
+                        
+                        showSuccess('Sample job description loaded successfully!');
+                    })
+                    .catch(error => {
+                        console.error('Error loading sample job description:', error);
+                        alert('Error loading sample job description. Please try uploading your own file.');
+                    });
+            });
+        }
+        
+        // File removal functionality
+        const resumeRemove = document.getElementById('resume-remove');
+        const jdRemove = document.getElementById('jd-remove');
+        
+        if (resumeRemove) {
+            resumeRemove.addEventListener('click', function() {
+                const resumeInput = document.getElementById('resume-input');
+                const resumePreview = document.getElementById('resume-preview');
+                
+                resumeInput.value = '';
+                resumePreview.style.display = 'none';
+            });
+        }
+        
+        if (jdRemove) {
+            jdRemove.addEventListener('click', function() {
+                const jdInput = document.getElementById('jd-input');
+                const jdPreview = document.getElementById('jd-preview');
+                
+                jdInput.value = '';
+                jdPreview.style.display = 'none';
+            });
+        }
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
         });
     });
 </script>
-{% endblock %} 
+{% endblock %}
